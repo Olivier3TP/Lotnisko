@@ -1,51 +1,46 @@
-public class Lot {
-    private String miejsceDocelowe;
-    private String miejsceWylotu;
-    private String dataWylotu;
-    private String czasLotu;
-    private int liczbaDostepnychMiejsc;
 
-    public String getDataWylotu() {
-        return dataWylotu;
-    }
-
-    public void setDataWylotu(String dataWylotu) {
-        this.dataWylotu = dataWylotu;
-    }
+public class Lot extends SystemZaklepywaniaLotow{
+    protected String miejsceDocelowe;
+    protected String miejsceWylotu;
+    protected String dataWylotu;
+    protected double czasTrwaniaLotu;
+    protected int liczbaMiejsc;
 
     public String getMiejsceDocelowe() {
         return miejsceDocelowe;
-    }
-
-    public void setMiejsceDocelowe(String miejsceDocelowe) {
-        this.miejsceDocelowe = miejsceDocelowe;
     }
 
     public String getMiejsceWylotu() {
         return miejsceWylotu;
     }
 
-    public void setMiejsceWylotu(String miejsceWylotu) {
+    public String getDataWylotu() {
+        return dataWylotu;
+    }
+
+    public double getCzasTrwaniaLotu() {
+        return czasTrwaniaLotu;
+    }
+
+    public int getLiczbaMiejsc() {
+        return liczbaMiejsc;
+    }
+
+
+    public void setLiczbaMiejsc(int liczbaMiejsc) {
+        this.liczbaMiejsc = liczbaMiejsc;
+    }
+
+    public Lot(String miejsceDocelowe, String miejsceWylotu, String dataWylotu, double czasTrwaniaLotu, int liczbaMiejsc) {
+        this.miejsceDocelowe = miejsceDocelowe;
         this.miejsceWylotu = miejsceWylotu;
+        this.dataWylotu = dataWylotu;
+        this.czasTrwaniaLotu = czasTrwaniaLotu;
+        this.liczbaMiejsc = liczbaMiejsc;
     }
 
-    public String getCzasLotu() {
-        return czasLotu;
-    }
-
-    public void setCzasLotu(String czasLotu) {
-        this.czasLotu = czasLotu;
-    }
-
-    public int getLiczbaDostepnychMiejsc() {
-        return liczbaDostepnychMiejsc;
-    }
-
-    public void setLiczbaDostepnychMiejsc(int liczbaDostepnychMiejsc) {
-        this.liczbaDostepnychMiejsc = liczbaDostepnychMiejsc;
-    }
-
-    public static int getNumerLotu() {
-        return numerLotu;
+    @Override
+    public String toString() {
+        return String.format("Miejsce docelowe %s, Miejsce Wylotu %s, DataWylotu %s, CzasTrwania %f, LiczbaMiejsc %d,",miejsceDocelowe,miejsceWylotu,dataWylotu,czasTrwaniaLotu,liczbaMiejsc);
     }
 }
